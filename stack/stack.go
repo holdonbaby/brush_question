@@ -10,8 +10,9 @@ func NewStack() *Stack {
 	return &Stack{Content: make([]int, 0)}
 }
 
-func (s *Stack) Push(n int) {
+func (s *Stack) Push(n int) *Stack {
 	s.Content = append(s.Content, n)
+	return s
 }
 
 func (s *Stack) Pull() int {

@@ -6,9 +6,13 @@ type Queue struct {
 	Content []int
 }
 
-func (q *Queue) Push(n int) {
-	head := []int{n}
-	q.Content = append(head, q.Content...)
+func NewQueue() *Queue {
+	return &Queue{Content: make([]int, 0)}
+}
+
+func (q *Queue) Push(n int) *Queue {
+	q.Content = append(q.Content, n)
+	return q
 }
 
 func (q *Queue) Pull() int {
